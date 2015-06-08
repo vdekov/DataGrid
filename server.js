@@ -2,6 +2,7 @@ var express = require('express');
 var body_parser = require('body-parser');
 var fs = require('fs');
 var path = require('path');
+var api = require('./api.js');
 
 // create server via ExpressJS
 var server = express();

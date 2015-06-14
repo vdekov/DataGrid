@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>DataGrid</title>
+   <script type="text/javascript" src="Scripts/MooTools-Core-1.5.1.js"></script>
+   <script type="text/javascript" src="Scripts/api.js"></script>
+   <script type="text/javascript" src="Scripts/grid.js"></script>
+   <script type="text/javascript" src="Scripts/element.js"></script>
+   <script type="text/javascript" src="Scripts/row.js"></script>
+   <script type="text/javascript" src="Scripts/cell.js"></script>
+   <script type="text/javascript" src="Scripts/editor.js"></script>
+</head>
+<body>
+   <h1>Hello, DataGrid!</h1>
+   <div id="grid"></div>
+   <script type="text/javascript">
+      // Create a new Grid
+      var grid = new Grid( 'grid', [] );
+      // Get all records from the server, and after that populate the grid
+      API.execute( 'get_data', {}, function ( result ) {
+         if ( result.success ) {
+            grid.loadData( result.data );
+         }
+      });
+   </script>
+</body>
+</html>

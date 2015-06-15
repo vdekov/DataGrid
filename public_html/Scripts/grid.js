@@ -1,12 +1,16 @@
 Grid = new Class({
    
+   Extends : Events,
+   
    placeholder : null,
    table       : null,
    data        : [],
    rows        : [],
+   columns     : [],
    
-   initialize : function ( placeholder, data ) {
+   initialize : function ( placeholder, columns, data ) {
       this.placeholder = document.id( placeholder );
+      this.columns     = columns;
       this.create( this.placeholder );
       this.loadData( data );
    },
@@ -15,7 +19,7 @@ Grid = new Class({
       this.data = data;
       
       data.forEach( function ( row_data ) {
-         this.rows.push( new Grid.Row( this.table, row_data ) );
+         this.rows.push( new Grid.Row( this.table, row_data, this.columns ) );
       }, this);
    },
    

@@ -4,8 +4,8 @@ Grid.Row = new Class({
    
    tag_name : 'tr',
    
-   createChild : function ( placeholder, data ) {
-      return new Grid.Row.Cell( placeholder, data );
+   createChild : function ( placeholder, data, editor ) {
+      return new Grid.Row.Cell( placeholder, data, editor );
    }
    
 });
